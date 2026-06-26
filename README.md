@@ -14,6 +14,7 @@ pip install projgen[yaml]    # JSON + YAML support
 ```
 
 ---
+### Note: Any idea or contribution is accepted after validation of authenticity of the contribution. Make sure to fork this first and follow me on Github.
 
 ## Quick start
 
