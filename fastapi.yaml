@@ -1,0 +1,68 @@
+# examples/fastapi_proj.yaml
+#
+# projgen example – FastAPI project structure in YAML format.
+# Run with:  projgen examples/fastapi_proj.yaml
+
+project_name: techtree-api
+
+project-structure:
+  # ── app package ──────────────────────────────────────────────────────────
+  - { level: 1, type: folder, name: app }
+  - { level: 2, type: file,   name: "app/__init__.py" }
+
+  # api layer
+  - { level: 2, type: folder, name: app/api }
+  - { level: 3, type: file,   name: "app/api/__init__.py" }
+  - { level: 3, type: folder, name: app/api/v1 }
+  - { level: 4, type: file,   name: "app/api/v1/__init__.py" }
+  - { level: 4, type: file,   name: "app/api/v1/auth.py" }
+  - { level: 4, type: file,   name: "app/api/v1/nodes.py" }
+  - { level: 4, type: file,   name: "app/api/v1/users.py" }
+
+  # core
+  - { level: 2, type: folder, name: app/core }
+  - { level: 3, type: file,   name: "app/core/config.py" }
+  - { level: 3, type: file,   name: "app/core/security.py" }
+  - { level: 3, type: file,   name: "app/core/roles.py" }
+
+  # database
+  - { level: 2, type: folder, name: app/db }
+  - { level: 3, type: folder, name: app/db/models }
+  - { level: 4, type: file,   name: "app/db/models/__init__.py" }
+  - { level: 4, type: file,   name: "app/db/models/user.py" }
+  - { level: 4, type: file,   name: "app/db/models/node.py" }
+  - { level: 3, type: file,   name: "app/db/base.py" }
+  - { level: 3, type: file,   name: "app/db/session.py" }
+
+  # middleware
+  - { level: 2, type: folder, name: app/middleware }
+  - { level: 3, type: file,   name: "app/middleware/__init__.py" }
+  - { level: 3, type: file,   name: "app/middleware/logging.py" }
+  - { level: 3, type: file,   name: "app/middleware/throttling.py" }
+
+  # services
+  - { level: 2, type: folder, name: app/services }
+  - { level: 3, type: file,   name: "app/services/user_service.py" }
+  - { level: 3, type: file,   name: "app/services/node_service.py" }
+
+  # tasks (Celery)
+  - { level: 2, type: folder, name: app/tasks }
+  - { level: 3, type: file,   name: "app/tasks/__init__.py" }
+  - { level: 3, type: file,   name: "app/tasks/indexing.py" }
+
+  # utils
+  - { level: 2, type: folder, name: app/utils }
+  - { level: 3, type: file,   name: "app/utils/helpers.py" }
+
+  # ── tests ─────────────────────────────────────────────────────────────────
+  - { level: 1, type: folder, name: tests }
+
+  # ── root files ────────────────────────────────────────────────────────────
+  - { level: 1, type: file, name: main.py }
+  - { level: 1, type: file, name: celery_worker.py }
+  - { level: 1, type: file, name: .gitignore }
+  - { level: 1, type: file, name: requirements.txt }
+  - { level: 1, type: file, name: Dockerfile }
+  - { level: 1, type: file, name: docker-compose.yml }
+  - { level: 1, type: file, name: .env }
+  - { level: 1, type: file, name: README.md }
